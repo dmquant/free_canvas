@@ -23,6 +23,7 @@ type Category =
 	| 'data/assets'
 	| 'shapes/tools'
 	| 'use-cases'
+	| 'dm-test'
 
 const getExamplesForCategory = (category: Category) =>
 	(Object.values(import.meta.glob('./examples/*/README.md', { eager: true })) as Example[])
@@ -40,6 +41,7 @@ const categories: Record<Category, string> = {
 	'data/assets': 'Data & assets',
 	'editor-api': 'Editor API',
 	'use-cases': 'Use cases',
+	'dm-test': 'DM Test',
 }
 
 export const examples = Object.entries(categories).map(([category, title]) => ({
